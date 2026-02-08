@@ -1,0 +1,36 @@
+cd kala-kriti-microservices/config-service && mvn spring-boot:run 
+cd kala-kriti-microservices/discovery-service && mvn spring-boot:run 
+cd kala-kriti-microservices/user-service && mvn spring-boot:run 
+cd kala-kriti-microservices/product-service && mvn spring-boot:run 
+cd kala-kriti-microservices/order-service && mvn spring-boot:run 
+cd kala-kriti-microservices/payment-service && mvn spring-boot:run 
+cd kala-kriti-microservices/api-gateway && mvn spring-boot:run 
+
+curl -X POST http://localhost:8080/api/products \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVJUSVNUIiwic3ViIjoiYXJwaXQtYXJ0aXN0IiwiaWF0IjoxNzU5MTYxNDUwLCJleHAiOjE3NTkyNDc4NTB9.GOLW2IteZPLmGcbmC3qL-MdZV3ubntw2ovTIyO-gDnI" \
+  -d '{
+  "title": "Abstract Painting",
+  "description": "Beautiful abstract art piece",
+  "price": 5000.00,
+  "stock": 1,
+  "artistId": 1,
+  "categoryId": 1,
+  "imageUrl": "https://cdn.example.com/art/abstract-123.jpg"
+}'
+
+curl -X POST http://localhost:8080/api/products \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVJUSVNUIiwic3ViIjoiYXJ0aXN0MTIzIiwiaWF0IjoxNzU5MjA3ODM2LCJleHAiOjE3NTkyOTQyMzZ9.li7YDQPvyYjso5QADbULIv0NI9AZ1VQQtxoqPCK1rz8" \
+  -d '{
+    "name": "Sunset Landscape",
+    "description": "Beautiful sunset landscape painting with vibrant colors",
+    "price": 15000.00,
+    "imageUrl": "https://cdn.example.com/art/sunset-landscape.jpg",
+    "artistId": 1,
+    "categoryId": 2,
+    "stockQuantity": 1,
+    "dimensions": "24x18 inches",
+    "medium": "Oil on Canvas",
+    "yearCreated": 2024
+  }'
