@@ -6,8 +6,8 @@ spring:
     name: payment-service
   datasource:
     url: ${PAYMENT_DB_URL:jdbc:postgresql://localhost:5432/kala_kriti_payments}
-    username: ${PAYMENT_DB_USERNAME:postgres}
-    password: ${PAYMENT_DB_PASSWORD:password}
+    username: ${PAYMENT_DB_USERNAME:sajalgarg}
+    password: ${PAYMENT_DB_PASSWORD:}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
